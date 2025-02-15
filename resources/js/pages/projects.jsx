@@ -2,7 +2,7 @@
  * External dependencies.
  */
 import { Link } from '@inertiajs/react';
-import { PencilRuler } from 'lucide-react';
+import { BadgePlus, PencilRuler } from 'lucide-react';
 
 /**
  * Internal dependencies.
@@ -26,6 +26,10 @@ const Projects = ({ projects }) => {
                         </HStack>
                     </div>
                 ))}
+
+                <button type="button" className="projects-create">
+                    <BadgePlus color="#ffffff" />
+                </button>
             </div>
         </Layout>
     );

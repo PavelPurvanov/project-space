@@ -3,6 +3,9 @@
 // ==========================================================================
 
 .projects {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
 }
 
 ///
@@ -19,17 +22,8 @@
     border-radius: 16px;
     color: var(--tt-color-blue);
 
-    &:hover {
-        color: #ffffff;
-        background-color: var(--tt-color-orange);
-    }
-
-    &:hover svg {
-        stroke: #ffffff;
-    }
-
-    & + .projects__item {
-        margin-top: 16px;
+    svg:hover {
+        stroke: var(--tt-color-orange);
     }
 
     a {
@@ -37,7 +31,22 @@
 
         &:hover {
             font-weight: 800;
-            color: #ffffff;
+            color: var(--tt-color-orange);
         }
+    }
+}
+
+///
+// Projects Create button
+// ==========================================================================
+
+.projects-create {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--tt-color-blue);
+    border-radius: 16px;
+
+    &:hover {
+        background-color: var(--tt-color-orange);
     }
 }
