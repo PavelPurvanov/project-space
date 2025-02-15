@@ -7,6 +7,12 @@
     padding: 16px;
     border: none;
     border-radius: 8px;
-    color: var(--tt-color-orange);
+    color: var(--tt-color-blue);
     background-color: var(--tt-color-gray);
+    cursor: pointer;
+
+    &:hover {
+        color: #ffffff;
+        background-color: var(--tt-color-orange);
+    }
 }
