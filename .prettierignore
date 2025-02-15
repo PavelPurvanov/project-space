@@ -1,0 +1,10 @@
+/app
+/public
+/vendor
+/storage
+/tests
+/.*
+/resources/views
+README.md
+composer.json
+composer.lock
