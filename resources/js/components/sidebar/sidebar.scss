@@ -8,6 +8,9 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    padding: 16px;
+    border-right: 1px solid;
+    border-right-color: var(--tt-color-orange);
 }
 
 ///
@@ -15,8 +18,10 @@
 // ==========================================================================
 
 .sidebar__item {
-    padding: 24px;
-    border: none;
-    background: none;
-    cursor: pointer;
+    padding: 16px;
+    border-radius: 16px;
+
+    &:hover {
+        background-color: var(--tt-color-gray);
+    }
 }
