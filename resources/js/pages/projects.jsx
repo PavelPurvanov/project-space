@@ -1,6 +1,7 @@
 /**
  * External dependencies.
  */
+import { Link } from '@inertiajs/react';
 import { PencilRuler } from 'lucide-react';
 
 /**
@@ -9,40 +10,22 @@ import { PencilRuler } from 'lucide-react';
 import Layout from '@/components/layout/layout';
 import { HStack } from '@/components/stack/stack';
 
-const Projects = () => {
+const Projects = ({ projects }) => {
     return (
         <Layout>
             <div className="projects">
-                <div className="projects__item">
-                    <HStack>
-                        <a>Project Title</a>
-                    </HStack>
-                    <HStack>
-                        <button type="button">
-                            <PencilRuler color="#0c3d51" />
-                        </button>
-                    </HStack>
-                </div>
-                <div className="projects__item">
-                    <HStack>
-                        <a>Project Title</a>
-                    </HStack>
-                    <HStack>
-                        <button type="button">
-                            <PencilRuler color="#0c3d51" />
-                        </button>
-                    </HStack>
-                </div>
-                <div className="projects__item">
-                    <HStack>
-                        <a>Project Title</a>
-                    </HStack>
-                    <HStack>
-                        <button type="button">
-                            <PencilRuler color="#0c3d51" />
-                        </button>
-                    </HStack>
-                </div>
+                {projects.map((project) => (
+                    <div key={project.slug} className="projects__item">
+                        <HStack>
+                            <Link href="/roadmap">{project.name}</Link>
+                        </HStack>
+                        <HStack>
+                            <button type="button">
+                                <PencilRuler color="#0c3d51" />
+                            </button>
+                        </HStack>
+                    </div>
+                ))}
             </div>
         </Layout>
     );

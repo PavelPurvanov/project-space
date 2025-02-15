@@ -31,4 +31,13 @@
     & + .projects__item {
         margin-top: 16px;
     }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            font-weight: 800;
+            color: #ffffff;
+        }
+    }
 }
