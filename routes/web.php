@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return inertia('app');
+Route::controller(ProjectController::class)->group(function () {
+    Route::get('/projects', 'index')->name('project.index');
 });
