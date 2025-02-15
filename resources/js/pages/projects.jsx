@@ -17,7 +17,7 @@ const Projects = ({ projects }) => {
                 {projects.map((project) => (
                     <div key={project.slug} className="projects__item">
                         <HStack>
-                            <Link href="/roadmap">{project.name}</Link>
+                            <Link href={`/${project.slug}`}>{project.name}</Link>
                         </HStack>
                         <HStack>
                             <button type="button">
