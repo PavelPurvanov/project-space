@@ -2,16 +2,26 @@
  * External dependencies.
  */
 
-const Stack = ({ children, direction }) => (
-    <div className={`stack stack--${direction}`}>{children}</div>
+const Stack = ({ gap, children, direction }) => (
+    <div
+        className={`stack stack--${direction} ${
+            gap ? `stack--gap-${gap}` : ''
+        }`}
+    >
+        {children}
+    </div>
 );
 
-export const VStack = ({ children }) => (
-    <Stack direction="row">{children}</Stack>
+export const VStack = ({ gap, children }) => (
+    <Stack gap={gap} direction="column">
+        {children}
+    </Stack>
 );
 
-export const HStack = ({ children }) => (
-    <Stack direction="column">{children}</Stack>
+export const HStack = ({ gap, children }) => (
+    <Stack gap={gap} direction="row">
+        {children}
+    </Stack>
 );
 
 export default Stack;

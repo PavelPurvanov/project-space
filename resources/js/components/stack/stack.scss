@@ -21,3 +21,20 @@
 .stack--column {
     flex-direction: column;
 }
+
+///
+// Stack Gap
+// ==========================================================================
+
+.stack--gap-8 {
+    gap: 8px;
+}
+.stack--gap-16 {
+    gap: 16px;
+}
+.stack--gap-24 {
+    gap: 24px;
+}
+.stack--gap-32 {
+    gap: 32px;
+}
