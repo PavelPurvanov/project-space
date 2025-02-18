@@ -1,0 +1,36 @@
+/// ==========================================================================
+// Checkbox
+// ==========================================================================
+
+.checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--tt-font-size-xxxsmall);
+    cursor: pointer;
+
+    input {
+        width: 24px;
+        height: 24px;
+        opacity: 0;
+    }
+}
+
+///
+// Checkbox Visual
+// ==========================================================================
+
+.checkbox__visual {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--tt-color-blue-13);
+    background-color: var(--tt-color-gray);
+}
