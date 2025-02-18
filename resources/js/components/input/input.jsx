@@ -1,6 +1,6 @@
-const Input = ({ name, type, error, ...rest }) => (
-    <div className={`input input--${type} ${error ? 'has-error' : ''}`}>
-        <input {...rest} />
+const Input = ({ type, error, ...rest }) => (
+    <div className={`input ${error ? 'has-error' : ''}`}>
+        <input type={type} {...rest} />
 
         {error && <p className="input__error">{error}</p>}
     </div>
