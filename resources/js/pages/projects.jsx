@@ -8,7 +8,7 @@ import { BadgePlus, PencilRuler } from 'lucide-react';
  * Internal dependencies.
  */
 import Layout from '@/components/layout/layout';
-import { HStack } from '@/components/stack/stack';
+import { VStack } from '@/components/stack/stack';
 
 const Projects = ({ projects }) => {
     return (
@@ -16,14 +16,16 @@ const Projects = ({ projects }) => {
             <div className="projects">
                 {projects.map((project) => (
                     <div key={project.slug} className="projects__item">
-                        <HStack>
-                            <Link href={`/${project.slug}`}>{project.name}</Link>
-                        </HStack>
-                        <HStack>
+                        <VStack>
+                            <Link href={`/${project.slug}`}>
+                                {project.name}
+                            </Link>
+                        </VStack>
+                        <VStack>
                             <button type="button">
                                 <PencilRuler color="#0c3d51" />
                             </button>
-                        </HStack>
+                        </VStack>
                     </div>
                 ))}
 
