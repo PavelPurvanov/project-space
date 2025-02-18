@@ -11,6 +11,7 @@
 
 @use '@/components/input/input';
 @use '@/components/stack/stack';
+@use '@/components/button/button';
 @use '@/components/select/select';
 @use '@/components/layout/layout';
 @use '@/components/header/header';
@@ -36,7 +37,5 @@
 }
 
 button {
-    border: none;
-    background: none;
     cursor: pointer;
 }

@@ -1,0 +1,47 @@
+/// ==========================================================================
+// Button
+// ==========================================================================
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    width: 448px;
+    font-size: var(--tt-font-size);
+    color: #ffffff;
+    border-radius: 16px;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+///
+// Button Medium
+// ==========================================================================
+
+.button--medium {
+    height: 48px;
+    border-radius: 8px;
+    font-size: var(--tt-font-size-xsmall);
+}
+
+///
+// Button Blue
+// ==========================================================================
+
+.button--blue {
+    border: none;
+    background-color: var(--tt-color-blue);
+}
+
+///
+// Button Orange
+// ==========================================================================
+
+.button--orange {
+    border: none;
+    background-color: var(--tt-color-orange);
+}
