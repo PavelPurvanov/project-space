@@ -15,6 +15,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/projects', 'index')->name('project.index');
     });
