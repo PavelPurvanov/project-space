@@ -1,13 +1,14 @@
 /**
  * External dependencies.
  */
-import { usePage } from '@inertiajs/react';
+import { Link, usePage } from '@inertiajs/react';
 
 /**
  * Internal dependencies.
  */
 import Select from '@/components/select/select';
 import Sidebar from '@/components/sidebar/sidebar';
+import { HStack } from '@/components/stack/stack';
 import Header, { HeaderLeft, HeaderRight } from '@/components/header/header';
 
 const Layout = ({ children }) => {
@@ -23,13 +24,17 @@ const Layout = ({ children }) => {
                         <Select />
                     </HeaderLeft>
                     <HeaderRight>
-                        <div className="account-menu">
+                        <HStack gap="8">
+                            <Link href="/logout" method="post">
+                                Logout
+                            </Link>
+
                             <img
                                 src="images/avatar.png"
                                 height="56"
                                 width="56"
                             />
-                        </div>
+                        </HStack>
                     </HeaderRight>
                 </Header>
 
