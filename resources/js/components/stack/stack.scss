@@ -2,34 +2,20 @@
 // Stack
 // ==========================================================================
 
+$stack-directions: row, column, row-reverse, column-reverse;
+
 .stack {
     display: flex;
-}
 
-///
-// Stack Row
-// ==========================================================================
-
-.stack--row {
-    flex-direction: row;
-}
-
-///
-// Stack Column
-// ==========================================================================
-
-.stack--column {
-    flex-direction: column;
-}
-
-///
-// Stack Spacing
-// ==========================================================================
-
-.stack {
     @for $spacing from 1 through 16 {
         &--spacing-#{$spacing * 4} {
             gap: #{$spacing * 4}px;
+        }
+    }
+
+    @each $direction in $stack-directions {
+        &--direction-#{$direction} {
+            flex-direction: #{$direction};
         }
     }
 }
