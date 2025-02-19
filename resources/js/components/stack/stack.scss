@@ -3,6 +3,8 @@
 // ==========================================================================
 
 $stack-directions: row, column, row-reverse, column-reverse;
+$stack-justify: flex-start, center, space-between, space-around, space-evenly,
+    flex-end;
 
 .stack {
     display: flex;
@@ -16,6 +18,12 @@ $stack-directions: row, column, row-reverse, column-reverse;
     @each $direction in $stack-directions {
         &--direction-#{$direction} {
             flex-direction: #{$direction};
+        }
+    }
+
+    @each $justify in $stack-justify {
+        &--justify-#{$justify} {
+            justify-content: #{$justify};
         }
     }
 }
