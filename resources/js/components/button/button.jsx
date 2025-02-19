@@ -1,11 +1,23 @@
-const Button = ({ type = 'button', color = '', children, modifier }) => (
+/**
+ * Internal dependencies.
+ */
+import Loader from '@/components/loader/loader';
+
+const Button = ({
+    type = 'button',
+    color = '',
+    children,
+    modifier,
+    processing = false,
+}) => (
     <button
         type={type}
+        disabled={processing}
         className={`button ${color ? `button--${color}` : ''} ${
             modifier ? `button--${modifier}` : ''
         }`}
     >
-        {children}
+        {processing ? <Loader /> : children}
     </button>
 );
 
