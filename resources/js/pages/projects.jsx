@@ -7,6 +7,7 @@ import { BadgePlus, PencilRuler } from 'lucide-react';
 /**
  * Internal dependencies.
  */
+import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import { VStack } from '@/components/stack/stack';
 
@@ -29,9 +30,9 @@ const Projects = ({ projects }) => {
                     </div>
                 ))}
 
-                <button type="button" className="projects-create">
+                <Button color="blue" modifier="medium">
                     <BadgePlus color="#ffffff" />
-                </button>
+                </Button>
             </div>
         </Layout>
     );
