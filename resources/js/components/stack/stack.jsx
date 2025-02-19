@@ -5,7 +5,7 @@
 const Stack = ({ gap, children, direction }) => (
     <div
         className={`stack stack--${direction} ${
-            gap ? `stack--gap-${gap}` : ''
+            gap ? `stack--spacing-${gap}` : ''
         }`}
     >
         {children}

@@ -23,18 +23,13 @@
 }
 
 ///
-// Stack Gap
+// Stack Spacing
 // ==========================================================================
 
-.stack--gap-8 {
-    gap: 8px;
-}
-.stack--gap-16 {
-    gap: 16px;
-}
-.stack--gap-24 {
-    gap: 24px;
-}
-.stack--gap-32 {
-    gap: 32px;
+.stack {
+    @for $spacing from 1 through 16 {
+        &--spacing-#{$spacing * 4} {
+            gap: #{$spacing * 4}px;
+        }
+    }
 }
