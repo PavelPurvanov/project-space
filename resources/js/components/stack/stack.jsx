@@ -1,12 +1,14 @@
 /**
  * External dependencies.
  */
+import classNames from 'classnames';
 
 const Stack = ({ gap, justify, children, direction }) => (
     <div
-        className={`stack stack--direction-${direction} ${
-            gap ? `stack--spacing-${gap}` : ''
-        } ${justify ? `stack--justify-${justify}` : ''}`}
+        className={classNames('stack', `stack--direction-${direction}`, {
+            [`stack--spacing-${gap}`]: gap,
+            [`stack--justify-${justify}`]: justify,
+        })}
     >
         {children}
     </div>
