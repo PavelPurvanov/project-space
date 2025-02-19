@@ -1,5 +1,14 @@
+/**
+ * External dependencies.
+ */
+import classNames from 'classnames';
+
 const Header = ({ modifier, children }) => (
-    <header className={`header ${modifier ? `header--${modifier}` : ""}`}>
+    <header
+        className={classNames('header', {
+            [`header--${modifier}`]: modifier,
+        })}
+    >
         {children}
     </header>
 );
