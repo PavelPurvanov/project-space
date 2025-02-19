@@ -1,4 +1,9 @@
 /**
+ * External dependencies.
+ */
+import classNames from 'classnames';
+
+/**
  * Internal dependencies.
  */
 import Loader from '@/components/loader/loader';
@@ -13,9 +18,10 @@ const Button = ({
     <button
         type={type}
         disabled={processing}
-        className={`button ${color ? `button--${color}` : ''} ${
-            modifier ? `button--${modifier}` : ''
-        }`}
+        className={classNames('button', {
+            [`button--${color}`]: color,
+            [`button--${modifier}`]: modifier,
+        })}
     >
         {processing ? <Loader /> : children}
     </button>
