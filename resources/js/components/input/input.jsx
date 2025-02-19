@@ -1,5 +1,14 @@
+/**
+ * External dependencies.
+ */
+import classNames from 'classnames';
+
 const Input = ({ type, error, ...rest }) => (
-    <div className={`input ${error ? 'has-error' : ''}`}>
+    <div
+        className={classNames('input', {
+            'has-error': error,
+        })}
+    >
         <input type={type} {...rest} />
 
         {error && <p className="input__error">{error}</p>}
