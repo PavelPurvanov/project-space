@@ -1,0 +1,81 @@
+/// ==========================================================================
+// Text
+// ==========================================================================
+
+$text-align: left, center, right, justify;
+$text-weights: 400, 600, 700;
+$text-transform: capitalize, uppercase, lowercase;
+$text-variants: (
+    'link': var(--tt-color-blue-1f),
+    'error': var(--tt-color-red),
+    'default': var(--tt-color-blue),
+);
+
+.text {
+    overflow-wrap: break-word;
+
+    @for $i from 10 through 30 {
+        &--size-#{$i} {
+            font-size: #{$i}px;
+
+            @if $i == 10 {
+                line-height: 14px;
+            } @else if $i == 11 or $i == 12 {
+                line-height: 16px;
+            } @else if $i == 13 {
+                line-height: 18px;
+            } @else {
+                line-height: 20px;
+            }
+        }
+    }
+
+    @each $variant, $color in $text-variants {
+        &--variant-#{$variant} {
+            color: $color;
+        }
+    }
+
+    @each $weight in $text-weights {
+        &--weight-#{$weight} {
+            font-weight: $weight;
+        }
+    }
+
+    @each $align in $text-align {
+        &--align-#{$align} {
+            text-align: $align;
+        }
+    }
+
+    @each $transform in $text-transform {
+        &--transform-#{$transform} {
+            text-transform: $transform;
+        }
+    }
+}
+
+///
+// Text Link
+// ==========================================================================
+
+.text--variant-link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 105%;
+        border-width: 0 0 1px;
+        border-style: solid;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
