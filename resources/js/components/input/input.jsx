@@ -3,6 +3,11 @@
  */
 import classNames from 'classnames';
 
+/**
+ * Internal dependencies.
+ */
+import Text from '@/components/text/text';
+
 const Input = ({ type, error, ...rest }) => (
     <div
         className={classNames('input', {
@@ -11,7 +16,11 @@ const Input = ({ type, error, ...rest }) => (
     >
         <input type={type} {...rest} />
 
-        {error && <p className="input__error">{error}</p>}
+        {error && (
+            <Text size="13" variant="error" className="input__error">
+                {error}
+            </Text>
+        )}
     </div>
 );
 
