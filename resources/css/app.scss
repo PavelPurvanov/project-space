@@ -49,3 +49,9 @@ body {
 button {
     cursor: pointer;
 }
+
+hr {
+    height: 1px;
+    border: 0;
+    background-color: var(--tt-color-blue-13);
+}
