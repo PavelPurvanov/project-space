@@ -2,6 +2,7 @@
 // Stack
 // ==========================================================================
 
+$stack-align: stretch, flex-start, center, flex-end, baseline;
 $stack-directions: row, column, row-reverse, column-reverse;
 $stack-justify: flex-start, center, space-between, space-around, space-evenly,
     flex-end;
@@ -26,4 +27,20 @@ $stack-justify: flex-start, center, space-between, space-around, space-evenly,
             justify-content: #{$justify};
         }
     }
+
+    @each $align in $stack-align {
+        &--align-#{$align} {
+            align-items: #{$align};
+        }
+    }
+}
+
+///
+// Stack Bordered
+// ==========================================================================
+
+.stack--variant-bordered {
+    padding: 112px;
+    border: 1px solid var(--tt-color-gray);
+    border-radius: 16px;
 }
