@@ -82,7 +82,16 @@ const Login = () => {
                         </Button>
                     </VStack>
                 </form>
-            </div>
+
+                <hr />
+
+                <Text align="center">
+                    Don’t have account?{' '}
+                    <Text as="a" href="/register">
+                        Sign Up
+                    </Text>
+                </Text>
+            </Stack>
         </Layout>
     );
 };
