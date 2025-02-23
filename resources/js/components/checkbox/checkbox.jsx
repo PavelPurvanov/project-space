@@ -4,6 +4,11 @@
 import { Check } from 'lucide-react';
 import { useState } from 'react';
 
+/**
+ * Internal dependencies.
+ */
+import Text from '@/components/text/text';
+
 const Checkbox = ({ label, onChange, ...rest }) => {
     const [checked, setChecked] = useState(false);
 
@@ -22,7 +27,7 @@ const Checkbox = ({ label, onChange, ...rest }) => {
                 {checked && <Check size={16} />}
             </div>
 
-            <span>{label}</span>
+            <Text size="14">{label}</Text>
         </label>
     );
 };
