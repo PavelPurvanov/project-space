@@ -6,12 +6,13 @@ import { Rocket } from 'lucide-react';
 /**
  * Internal dependencies.
  */
+import Text from '@/components/text/text';
 import Input from '@/components/input/input';
 import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import useForm from '@/hooks/use-form';
 import Checkbox from '@/components/checkbox/checkbox';
-import { VStack } from '@/components/stack/stack';
+import Stack, { VStack, HStack } from '@/components/stack/stack';
 
 const Login = () => {
     const { post, errors, processing, handleOnChange } = useForm({
@@ -27,10 +28,12 @@ const Login = () => {
 
     return (
         <Layout guest>
-            <div className="box">
-                <h2>
-                    Login to your Project Space <Rocket size={32} />
-                </h2>
+            <Stack gap={40} variant="bordered" direction="column">
+                <Text as="h2" size="30">
+                    <HStack gap={4} align="center">
+                        Login to your Project Space <Rocket size={32} />
+                    </HStack>
+                </Text>
 
                 <form onSubmit={handleOnSubmit}>
                     <VStack gap={32}>
