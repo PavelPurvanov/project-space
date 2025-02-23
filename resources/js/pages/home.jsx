@@ -7,17 +7,21 @@ import { Link, usePage } from '@inertiajs/react';
 /**
  * Internal dependencies.
  */
+import Text from '@/components/text/text';
 import Layout from '@/components/layout/layout';
+import { HStack, VStack } from '@/components/stack/stack';
 
 const Home = () => {
     const { appName } = usePage().props;
 
     return (
         <Layout>
-            <div className="box">
-                <h2>
-                    Welcome to {appName} <Rocket size={32} />
-                </h2>
+            <VStack gap={40} variant="bordered">
+                <Text as="h2" size="30">
+                    <HStack gap={4} align="center">
+                        Welcome to {appName} <Rocket size={32} />
+                    </HStack>
+                </Text>
 
                 <Link href="/login" className="button button--blue">
                     Login
@@ -26,7 +30,7 @@ const Home = () => {
                 <Link href="/register" className="button button--orange">
                     Register
                 </Link>
-            </div>
+            </VStack>
         </Layout>
     );
 };
