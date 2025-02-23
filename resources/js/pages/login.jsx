@@ -55,11 +55,22 @@ const Login = () => {
                             />
                         </VStack>
 
-                        <Checkbox
-                            name="remember"
-                            label="Remember Me"
-                            onChange={handleOnChange}
-                        />
+                        <HStack justify="space-between">
+                            <Checkbox
+                                name="remember"
+                                label="Remember Me"
+                                onChange={handleOnChange}
+                            />
+
+                            <Text
+                                as="a"
+                                size="14"
+                                href="/forgot-password"
+                                weight="semibold"
+                            >
+                                Forgot Password?
+                            </Text>
+                        </HStack>
 
                         <Button
                             type="submit"
