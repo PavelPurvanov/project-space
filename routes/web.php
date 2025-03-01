@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -12,6 +13,9 @@ Route::middleware('guest')->group(function () {
         Route::post('/logout', 'logout')->name('logout');
         Route::inertia('/login', 'login')->name('login.edit');
     });
+
+    Route::post('/register', RegisterController::class)->name('register');
+    Route::inertia('/register', 'register')->name('register.edit');
 });
 
 Route::middleware('auth')->group(function () {
