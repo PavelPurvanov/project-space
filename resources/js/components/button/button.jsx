@@ -13,12 +13,14 @@ const Button = ({
     color = '',
     children,
     modifier,
+    className,
     processing = false,
 }) => (
     <button
         type={type}
         disabled={processing}
         className={classNames('button', {
+            [className]: className,
             [`button--${color}`]: color,
             [`button--${modifier}`]: modifier,
         })}
