@@ -17,7 +17,12 @@ const Input = ({ type, error, ...rest }) => (
         <input type={type} {...rest} />
 
         {error && (
-            <Text size="13" variant="error" className="input__error">
+            <Text
+                size="13"
+                align={type === 'file' ? 'center' : 'left'}
+                variant="error"
+                className="input__error"
+            >
                 {error}
             </Text>
         )}
