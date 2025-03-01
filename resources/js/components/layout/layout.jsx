@@ -3,8 +3,8 @@
  */
 import Select from '@/components/select/select';
 import Sidebar from '@/components/sidebar/sidebar';
+import AccountMenu from '@/blocks/account/account-menu';
 import Header, { HeaderLeft, HeaderRight } from '@/components/header/header';
-import AccountMenu from '@/blocks/account-menu/account-menu';
 
 const Layout = ({ guest, children }) =>
     guest ? (
