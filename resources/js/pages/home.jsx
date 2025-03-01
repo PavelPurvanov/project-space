@@ -15,7 +15,7 @@ const Home = () => {
     const { appName } = usePage().props;
 
     return (
-        <Layout>
+        <Layout guest>
             <VStack gap={40} variant="bordered">
                 <Text as="h2" size="30">
                     <HStack gap={4} align="center">
