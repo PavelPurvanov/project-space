@@ -36,6 +36,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
      */
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/projects', 'index')->name('project.index');
+        Route::get('/projects/create', 'create')->name('project.create');
     });
 
     /**

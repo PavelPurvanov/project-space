@@ -15,4 +15,10 @@ class ProjectController
             'projects' => ProjectResource::collection($projects),
         ]);
     }
+
+    public function create()
+    {
+        return inertia('projects-create');
+    }
+
 }
