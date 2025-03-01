@@ -30,4 +30,11 @@ class ProjectController
 
         return to_route('project.index');
     }
+
+    public function edit(Project $project)
+    {
+        return inertia('projects-edit', [
+            'project' => ProjectResource::make($project),
+        ]);
+    }
 }
