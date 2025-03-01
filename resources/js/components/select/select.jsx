@@ -1,6 +1,6 @@
 const Select = () => (
     <select className="select">
-        <option selected="selected">All Projects</option>
+        <option defaultValue="selected">All Projects</option>
     </select>
 );
 
