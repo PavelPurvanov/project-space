@@ -7,7 +7,6 @@ import { BadgePlus, PencilRuler } from 'lucide-react';
 /**
  * Internal dependencies.
  */
-import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import { VStack } from '@/components/stack/stack';
 
@@ -23,9 +22,12 @@ const Projects = ({ projects }) => {
                             </Link>
                         </VStack>
                         <VStack>
-                            <Button className="projects-edit">
+                            <Link
+                                href={`/projects/${project.slug}/edit`}
+                                className="projects-edit"
+                            >
                                 <PencilRuler color="#0c3d51" />
-                            </Button>
+                            </Link>
                         </VStack>
                     </div>
                 ))}
