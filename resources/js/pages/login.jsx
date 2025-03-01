@@ -75,7 +75,6 @@ const Login = () => {
                         <Button
                             type="submit"
                             color="orange"
-                            modifier="medium"
                             processing={processing}
                         >
                             Login

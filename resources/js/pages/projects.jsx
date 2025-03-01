@@ -30,10 +30,7 @@ const Projects = ({ projects }) => {
                     </div>
                 ))}
 
-                <Link
-                    href="/projects/create"
-                    className="button button--blue button--medium"
-                >
+                <Link href="/projects/create" className="button button--blue">
                     <BadgePlus color="#ffffff" />
                 </Link>
             </div>

@@ -72,7 +72,6 @@ const Register = () => {
                         <Button
                             type="submit"
                             color="orange"
-                            modifier="medium"
                             processing={processing}
                         >
                             Register

@@ -42,7 +42,6 @@ const VerifyEmail = ({ authUser }) => {
                     <Button
                         type="submit"
                         color="orange"
-                        modifier="medium"
                         processing={processing}
                     >
                         Resend email

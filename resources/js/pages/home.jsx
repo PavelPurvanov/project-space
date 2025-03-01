@@ -23,11 +23,14 @@ const Home = () => {
                     </HStack>
                 </Text>
 
-                <Link href="/login" className="button button--blue">
+                <Link href="/login" className="button button--blue button--big">
                     Login
                 </Link>
 
-                <Link href="/register" className="button button--orange">
+                <Link
+                    href="/register"
+                    className="button button--orange button--big"
+                >
                     Register
                 </Link>
             </VStack>
