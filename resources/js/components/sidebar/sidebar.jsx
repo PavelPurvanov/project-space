@@ -31,7 +31,14 @@ const Sidebar = () => {
             </VStack>
 
             <VStack>
-                <Link className="sidebar__item">
+                <Link
+                    href="/account"
+                    className={
+                        url === '/account'
+                            ? 'sidebar__item active'
+                            : 'sidebar__item'
+                    }
+                >
                     <Settings color="#0c3d51" />
                 </Link>
             </VStack>
