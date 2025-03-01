@@ -38,6 +38,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/projects', 'index')->name('project.index');
         Route::get('/projects/create', 'create')->name('project.create');
         Route::post('/projects/store', 'store')->name('project.store');
+        Route::get('/projects/{project}/edit', 'edit')->name('project.edit');
+        Route::put('/projects/{project}/update', 'update')->name('project.update');
     });
 
     /**
