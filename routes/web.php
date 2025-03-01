@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\RegisterController;
@@ -18,10 +19,26 @@ Route::middleware('guest')->group(function () {
     Route::inertia('/register', 'register')->name('register.edit');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/projects', 'index')->name('project.index');
+    });
+
+    Route::controller(EmailVerificationController::class)->group(function () {
+        Route::get('/email/verify', 'show')
+            ->withoutMiddleware('verified')
+            ->name('verification.notice');
+
+        Route::post('/email/verify/resend', 'resend')
+            ->middleware('throttle:6,1')
+            ->withoutMiddleware('verified')
+            ->name('verification.send');
+
+        Route::get('/email/verify/{id}/{hash}', 'verify')
+            ->middleware('signed')
+            ->withoutMiddleware('verified')
+            ->name('verification.verify');
     });
 });
