@@ -40,7 +40,7 @@ const AccountMenu = () => {
                     onClick={() => setShowAccountMenu(true)}
                     disabled={showAccountMenu}
                 >
-                    <img src="images/avatar.png" width="40" height="40" />
+                    <img src={authUser.avatar} width="40" height="40" />
                 </button>
 
                 <Portal create={showAccountMenu}>
@@ -48,13 +48,15 @@ const AccountMenu = () => {
                         <VStack gap={16}>
                             <HStack gap={8}>
                                 <img
-                                    src="images/avatar.png"
+                                    src={authUser.avatar}
                                     width="40"
                                     height="40"
                                 />
 
                                 <VStack>
-                                    <Text size={15}>{authUser.name}</Text>
+                                    <Link href="/account">
+                                        <Text size={15}>{authUser.name}</Text>
+                                    </Link>
                                     <Text variant="helper">
                                         {authUser.email}
                                     </Text>
