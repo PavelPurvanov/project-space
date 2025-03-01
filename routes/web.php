@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
@@ -30,7 +31,6 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-
     /**
      * Projects
      */
@@ -42,6 +42,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::put('/projects/{project}/update', 'update')
             ->can('update', 'project')
             ->name('project.update');
+    });
+
+    /**
+     * Account
+     */
+    Route::controller(AccountController::class)->group(function () {
+        Route::get('/account', 'edit')->name('account.edit');
+        Route::post('/account/update', 'update')->name('account.update');
     });
 
     /**
