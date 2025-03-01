@@ -12,10 +12,14 @@ class RegisterController
     public function __invoke(RegisterRequest $request)
     {
         $user = User::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password')),
+            'name' => $request->validated('name'),
+            'email' => $request->validated('email'),
+            'password' => Hash::make($request->validated('password')),
         ]);
+
+        $user->addMedia(public_path('images/avatar.png'))
+            ->preservingOriginal()
+            ->toMediaCollection(User::AVATAR_COLLECTION_KEY);
 
         event(new Registered($user));
 
