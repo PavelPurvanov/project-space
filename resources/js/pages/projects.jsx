@@ -23,9 +23,9 @@ const Projects = ({ projects }) => {
                             </Link>
                         </VStack>
                         <VStack>
-                            <button type="button">
+                            <Button type="button" className="projects-edit">
                                 <PencilRuler color="#0c3d51" />
-                            </button>
+                            </Button>
                         </VStack>
                     </div>
                 ))}

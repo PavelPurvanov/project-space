@@ -38,16 +38,15 @@
 }
 
 ///
-// Projects Create button
+// Projects Edit button
 // ==========================================================================
 
-.projects-create {
-    width: 100%;
+.projects-edit {
     padding: 8px;
-    background-color: var(--tt-color-blue);
-    border-radius: 16px;
+    border: none;
+    background: none;
 
-    &:hover {
-        background-color: var(--tt-color-orange);
+    &:hover svg {
+        stroke: var(--tt-color-orange);
     }
 }
