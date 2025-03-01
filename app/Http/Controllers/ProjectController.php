@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 
@@ -36,5 +37,14 @@ class ProjectController
         return inertia('projects-edit', [
             'project' => ProjectResource::make($project),
         ]);
+    }
+
+    public function update(UpdateProjectRequest $request, Project $project)
+    {
+        $project->update([
+            'name' => $request->validated('name'),
+        ]);
+
+        return to_route('project.index');
     }
 }
