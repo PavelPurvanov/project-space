@@ -7,10 +7,15 @@ const useForm = (initialData) => {
     const { setData, clearErrors, ...rest } = useInertiaForm(initialData);
 
     const handleOnChange = (event) => {
-        const value =
-            event?.target?.type === 'checkbox'
-                ? event?.target?.checked
-                : event?.target?.value;
+        let value = event?.target?.value;
+
+        if (event?.target?.type === 'checkbox') {
+            value = event?.target?.checked;
+        }
+
+        if (event?.target?.type === 'file') {
+            value = event?.target?.files[0];
+        }
 
         setData((prev) => ({
             ...prev,
