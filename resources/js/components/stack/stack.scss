@@ -40,6 +40,7 @@ $stack-justify: flex-start, center, space-between, space-around, space-evenly,
 // ==========================================================================
 
 .stack--variant-bordered {
+    min-width: 656px;
     padding: 112px;
     border: 1px solid var(--tt-color-gray);
     border-radius: 16px;
