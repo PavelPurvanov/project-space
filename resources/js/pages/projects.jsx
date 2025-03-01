@@ -23,16 +23,19 @@ const Projects = ({ projects }) => {
                             </Link>
                         </VStack>
                         <VStack>
-                            <Button type="button" className="projects-edit">
+                            <Button className="projects-edit">
                                 <PencilRuler color="#0c3d51" />
                             </Button>
                         </VStack>
                     </div>
                 ))}
 
-                <Button color="blue" modifier="medium">
+                <Link
+                    href="/projects/create"
+                    className="button button--blue button--medium"
+                >
                     <BadgePlus color="#ffffff" />
-                </Button>
+                </Link>
             </div>
         </Layout>
     );
