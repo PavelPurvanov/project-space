@@ -1,7 +1,7 @@
 /**
  * External dependencies.
  */
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 
 /**
  * Internal dependencies.
@@ -11,10 +11,10 @@ import Sidebar from '@/components/sidebar/sidebar';
 import { HStack } from '@/components/stack/stack';
 import Header, { HeaderLeft, HeaderRight } from '@/components/header/header';
 
-const Layout = ({ children }) => {
-    const { authUser } = usePage().props;
-
-    return authUser ? (
+const Layout = ({ guest, children }) =>
+    guest ? (
+        <div className="layout layout--guest">{children}</div>
+    ) : (
         <div className="layout">
             <Sidebar />
 
@@ -41,9 +41,6 @@ const Layout = ({ children }) => {
                 <div className="layout__content">{children}</div>
             </div>
         </div>
-    ) : (
-        <div className="layout layout--guest">{children}</div>
     );
-};
 
 export default Layout;
