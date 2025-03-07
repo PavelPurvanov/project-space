@@ -11,7 +11,7 @@ import Input from '@/components/input/input';
 import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import useForm from '@/hooks/use-form';
-import Stack, { VStack, HStack } from '@/components/stack/stack';
+import { VStack, HStack } from '@/components/stack/stack';
 
 const Register = () => {
     const { post, errors, processing, handleOnChange } = useForm({
@@ -27,7 +27,7 @@ const Register = () => {
 
     return (
         <Layout guest>
-            <Stack gap={40} variant="bordered" direction="column">
+            <VStack gap={40} variant="bordered">
                 <Text as="h2" size="30" align="center">
                     <HStack gap={4} align="center" justify="center">
                         Register <Rocket size={32} />
@@ -87,7 +87,7 @@ const Register = () => {
                         Login
                     </Text>
                 </Text>
-            </Stack>
+            </VStack>
         </Layout>
     );
 };
