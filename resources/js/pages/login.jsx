@@ -12,7 +12,7 @@ import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import useForm from '@/hooks/use-form';
 import Checkbox from '@/components/checkbox/checkbox';
-import Stack, { VStack, HStack } from '@/components/stack/stack';
+import { VStack, HStack } from '@/components/stack/stack';
 
 const Login = () => {
     const { post, errors, processing, handleOnChange } = useForm({
@@ -28,7 +28,7 @@ const Login = () => {
 
     return (
         <Layout guest>
-            <Stack gap={40} variant="bordered" direction="column">
+            <VStack gap={40} variant="bordered">
                 <Text as="h2" size="30">
                     <HStack gap={4} align="center">
                         Login to your Project Space <Rocket size={32} />
@@ -90,7 +90,7 @@ const Login = () => {
                         Sign Up
                     </Text>
                 </Text>
-            </Stack>
+            </VStack>
         </Layout>
     );
 };
