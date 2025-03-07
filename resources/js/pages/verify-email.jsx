@@ -10,7 +10,7 @@ import Text from '@/components/text/text';
 import Button from '@/components/button/button';
 import Layout from '@/components/layout/layout';
 import useForm from '@/hooks/use-form';
-import Stack, { HStack } from '@/components/stack/stack';
+import { VStack, HStack } from '@/components/stack/stack';
 
 const VerifyEmail = ({ authUser }) => {
     const { processing, post } = useForm();
@@ -26,7 +26,7 @@ const VerifyEmail = ({ authUser }) => {
 
     return (
         <Layout guest>
-            <Stack gap={40} variant="bordered" direction="column">
+            <VStack gap={40} variant="bordered">
                 <Text as="h2" size="30" align="center">
                     <HStack gap={8} align="center" justify="center">
                         Verify your email address
@@ -47,7 +47,7 @@ const VerifyEmail = ({ authUser }) => {
                         Resend email
                     </Button>
                 </form>
-            </Stack>
+            </VStack>
         </Layout>
     );
 };
