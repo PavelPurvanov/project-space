@@ -17,7 +17,7 @@ const Projects = ({ projects }) => {
                 {projects.map((project) => (
                     <div key={project.slug} className="projects__item">
                         <VStack>
-                            <Link href={`/${project.slug}`}>
+                            <Link href={`/projects/${project.slug}`}>
                                 {project.name}
                             </Link>
                         </VStack>
