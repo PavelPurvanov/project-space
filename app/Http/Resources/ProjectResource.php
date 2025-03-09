@@ -12,6 +12,7 @@ class ProjectResource extends JsonResource
         return [
             'slug' => $this->slug,
             'name' => $this->name,
+            'groups' => GroupResource::collection($this->whenLoaded('groups')),
         ];
     }
 }
