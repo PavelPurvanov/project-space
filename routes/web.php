@@ -54,6 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::put('/projects/{project}/update', 'update')
             ->can('update', 'project')
             ->name('projects.update');
+        Route::get('/projects/{project}', 'show')->name('projects.show');
     });
 
     /**
