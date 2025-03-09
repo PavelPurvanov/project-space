@@ -7,6 +7,7 @@ $text-weights: 400, 600, 700;
 $text-transform: capitalize, uppercase, lowercase;
 $text-variants: (
     'link': var(--tt-color-blue-1f),
+    'white': #ffffff,
     'error': var(--tt-color-red),
     'helper': var(--tt-color-blue-137),
     'default': var(--tt-color-blue),
