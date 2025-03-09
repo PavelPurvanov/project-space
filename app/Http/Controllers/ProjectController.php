@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use App\Http\Resources\GroupResource;
 use App\Http\Resources\ProjectResource;
 use App\Models\Project;
 
@@ -15,6 +16,14 @@ class ProjectController
 
         return inertia('projects', [
             'projects' => ProjectResource::collection($projects),
+        ]);
+    }
+
+    public function show(Project $project)
+    {
+        return inertia('projects-show', [
+            'groups' => GroupResource::collection($project->groups),
+            'project' => ProjectResource::make($project),
         ]);
     }
 
