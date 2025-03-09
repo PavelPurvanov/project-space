@@ -1,0 +1,33 @@
+/// ==========================================================================
+// Groups
+// ==========================================================================
+
+.groups {
+    display: flex;
+    gap: 16px;
+    height: 100%;
+}
+
+/// ==========================================================================
+// Group
+// ==========================================================================
+
+.group {
+    width: 350px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #ffffff;
+}
+
+///
+// Group Header
+// ==========================================================================
+
+.group__header {
+    padding: 16px 8px;
+    color: #ffffff;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
